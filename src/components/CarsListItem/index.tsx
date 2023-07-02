@@ -11,6 +11,7 @@ const CarItem: React.FC<ICarItemProps> = ({ car }) => {
   const navigation = useNavigation();
   return (
     <TouchableOpacity
+      activeOpacity={0.8}
       onPress={() => navigation.navigate('CarDetails', { car })}
       style={styles.wrapper}>
       <Image source={{ uri: car.imgUrl }} style={styles.img} resizeMode="cover" />
