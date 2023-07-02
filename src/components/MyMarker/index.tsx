@@ -14,7 +14,7 @@ const MyMarker: React.FC<MarkerProps> = ({ car }) => {
         latitude: car.latitude,
         longitude: car.longitude,
       }}
-      title={car.carName}
+      title={car.carName + ' #' + car.carNumber}
       description={car.description}>
       <View style={styles.wrapper}>
         <Image
@@ -37,7 +37,7 @@ export default MyMarker;
 
 const styles = StyleSheet.create({
   wrapper: {
-    backgroundColor: '#fff',
+    backgroundColor: '#242424',
     width: 50,
     height: 50,
     borderRadius: 40,
