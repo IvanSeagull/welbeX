@@ -8,6 +8,7 @@ export type Car = {
   latitude: number;
   longitude: number;
   imgUrl: string;
+  description: string;
 };
 
 export enum CarTypes {

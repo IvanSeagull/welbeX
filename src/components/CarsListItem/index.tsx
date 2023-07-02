@@ -1,14 +1,18 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 import { Car, CarTypes } from '../../types';
+import { useNavigation } from '@react-navigation/native';
 
 interface ICarItemProps {
   car: Car;
 }
 
 const CarItem: React.FC<ICarItemProps> = ({ car }) => {
+  const navigation = useNavigation();
   return (
-    <View style={styles.wrapper}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate('CarDetails', { car })}
+      style={styles.wrapper}>
       <Image source={{ uri: car.imgUrl }} style={styles.img} resizeMode="cover" />
       <View style={styles.content}>
         <View style={styles.typeCon}>
@@ -22,7 +26,7 @@ const CarItem: React.FC<ICarItemProps> = ({ car }) => {
           {car.driverName} {car.driverSurname}
         </Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

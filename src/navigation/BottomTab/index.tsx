@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import CarsListScreen from '../../screens/CarsListScreen';
 import SettingsScreen from '../../screens/SettingsScreen';
 import MapScreen from '../../screens/MapScreen';
+import HomeNav from '../HomeNav';
 
 const Tab = createBottomTabNavigator();
 
@@ -43,7 +44,7 @@ const BottomTab = () => {
           ),
         }}
         name="Home"
-        component={CarsListScreen}
+        component={HomeNav}
       />
       <Tab.Screen
         options={{
