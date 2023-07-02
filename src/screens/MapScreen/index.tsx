@@ -3,6 +3,7 @@ import React from 'react';
 import data from '../../../assets/data.json';
 import MapView from 'react-native-maps';
 import MyMarker from '../../components/MyMarker';
+import { Car } from '../../types';
 
 const MapScreen = () => {
   return (
@@ -17,8 +18,15 @@ const MapScreen = () => {
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         }}>
-        {data.map((item, index) => (
-          <MyMarker key={index} car={item} />
+        {data.map((car: Car, index: number) => (
+          <MyMarker
+            key={index}
+            latitude={car.latitude}
+            longitude={car.longitude}
+            title={`${car.carName} #${car.carNumber}`}
+            description={`${car.description}`}
+            type={car.type}
+          />
         ))}
       </MapView>
     </View>

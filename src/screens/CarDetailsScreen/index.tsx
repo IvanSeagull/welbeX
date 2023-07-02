@@ -7,48 +7,70 @@ import { useNavigation } from '@react-navigation/native';
 import { Marker } from 'react-native-maps';
 import MyMarker from '../../components/MyMarker';
 import { ScrollView } from 'react-native-gesture-handler';
+import { Linking } from 'react-native';
+import { callNumber } from '../../utils/phone';
 
 const CarDetails = (params: any) => {
   const car: Car = params.route.params.car;
   const navigation = useNavigation();
   return (
     <View style={{ flex: 1 }}>
-      <ScrollView>
-        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.btnCon}>
-          <Image style={styles.btnImg} source={require('../../../assets/img/arrow-left.png')} />
+      <View style={styles.overlay}>
+        <TouchableOpacity style={styles.overlayBtnCon} onPress={() => navigation.goBack()}>
+          <Image style={styles.overlayBtnImg} source={require('../../../assets/img/message.png')} />
         </TouchableOpacity>
+        <TouchableOpacity style={styles.overlayBtnCon} onPress={() => callNumber(car.driverPhone)}>
+          <Image style={styles.overlayBtnImg} source={require('../../../assets/img/phone.png')} />
+        </TouchableOpacity>
+      </View>
+      {/* <ScrollView> */}
+      <TouchableOpacity onPress={() => navigation.goBack()} style={styles.btnBackCon}>
+        <Image style={styles.btnBackImg} source={require('../../../assets/img/arrow-left.png')} />
+      </TouchableOpacity>
 
-        <Image source={{ uri: car.imgUrl }} style={styles.img} resizeMode="cover" />
-        <View style={styles.content}>
-          <Text style={styles.title}>
-            {car.carName} #{car.carNumber}
-          </Text>
+      <Image source={{ uri: car.imgUrl }} style={styles.img} resizeMode="cover" />
+      <View style={styles.content}>
+        <Text style={styles.title}>
+          {car.carName} #{car.carNumber}
+        </Text>
 
-          <Text style={styles.driver}>
-            {car.driverName} {car.driverSurname}
-          </Text>
+        <Text style={styles.driver}>
+          {car.driverName} {car.driverSurname} <Text style={styles.phone}>{car.driverPhone}</Text>
+        </Text>
 
-          <View style={styles.typeCon}>
-            <Text style={styles.type}> {CarTypes[car.type as keyof typeof CarTypes]}</Text>
-          </View>
-
-          <Text style={styles.desc}>{car.description}</Text>
+        <View style={styles.typeCon}>
+          <Text style={styles.type}> {CarTypes[car.type as keyof typeof CarTypes]}</Text>
         </View>
-        <View style={styles.mapView}>
-          <MapView
-            style={{ flex: 1 }}
-            mapType="standard"
-            provider="google"
-            initialRegion={{
-              latitude: car.latitude,
-              longitude: car.longitude,
-              latitudeDelta: 0.0922,
-              longitudeDelta: 0.0421,
-            }}>
-            <MyMarker car={car} />
-          </MapView>
-        </View>
-      </ScrollView>
+
+        <Text style={styles.desc}>{car.description}</Text>
+      </View>
+      <View style={styles.mapView}>
+        {/* <MapView
+          style={{ flex: 1 }}
+          mapType="standard"
+          provider="google"
+          initialRegion={{
+            latitude: car.latitude,
+            longitude: car.longitude,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          }}>
+          <MyMarker
+            latitude={car.latitude}
+            longitude={car.longitude}
+            title={`${car.carName} #${car.carNumber}`}
+            description={`${car.description}`}
+            type={car.type}
+          />
+          <MyMarker
+            latitude={car.driverLatitude}
+            longitude={car.driverLongitude}
+            title={`${car.driverName} ${car.driverSurname}`}
+            type={'user'}
+          />
+        </MapView> */}
+      </View>
+      {/* </ScrollView> */}
     </View>
   );
 };
@@ -59,7 +81,26 @@ const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
   },
-  btnCon: {
+  overlay: {
+    position: 'absolute',
+    bottom: 16,
+    right: 16,
+    zIndex: 4,
+    gap: 18,
+  },
+  overlayBtnCon: {
+    height: 60,
+    width: 60,
+    borderRadius: 60,
+    backgroundColor: '#fff',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  overlayBtnImg: {
+    height: 30,
+    width: 30,
+  },
+  btnBackCon: {
     position: 'absolute',
     top: 50,
     left: 20,
@@ -71,13 +112,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  btnImg: {
+  btnBackImg: {
     height: 30,
     width: 30,
   },
   img: {
     width: '100%',
-    height: 300,
+    height: '30%',
   },
   content: {
     minHeight: 200,
@@ -95,6 +136,12 @@ const styles = StyleSheet.create({
     marginTop: 6,
     fontSize: 24,
     fontWeight: '500',
+  },
+  phone: {
+    marginTop: 6,
+    fontSize: 18,
+    fontWeight: '500',
+    color: '#007BFF',
   },
   typeCon: {
     position: 'absolute',

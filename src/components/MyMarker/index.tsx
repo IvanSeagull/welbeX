@@ -4,27 +4,34 @@ import { Marker } from 'react-native-maps';
 import { Car } from '../../types';
 
 interface MarkerProps {
-  car: Car;
+  latitude: number;
+  longitude: number;
+  title: string;
+  description?: string;
+  type: string;
+  //   car: Car;
 }
 
-const MyMarker: React.FC<MarkerProps> = ({ car }) => {
+const MyMarker: React.FC<MarkerProps> = ({ latitude, longitude, title, description, type }) => {
   return (
     <Marker
       coordinate={{
-        latitude: car.latitude,
-        longitude: car.longitude,
+        latitude: latitude,
+        longitude: longitude,
       }}
-      title={car.carName + ' #' + car.carNumber}
-      description={car.description}>
+      title={title}
+      description={description}>
       <View style={styles.wrapper}>
         <Image
           style={styles.icon}
           source={
-            car.type === 'p'
+            type === 'p'
               ? require('../../../assets/img/type2.png')
-              : car.type === 'f'
+              : type === 'f'
               ? require('../../../assets/img/type.png')
-              : require('../../../assets/img/type3.png')
+              : type === 's'
+              ? require('../../../assets/img/type3.png')
+              : require('../../../assets/img/user.png')
           }
           resizeMode="contain"
         />
