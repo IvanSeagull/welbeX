@@ -9,6 +9,7 @@ import MyMarker from '../../components/MyMarker';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Linking } from 'react-native';
 import { callNumber } from '../../utils/phone';
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
 const CarDetails = (params: any) => {
   const car: Car = params.route.params.car;
@@ -23,7 +24,6 @@ const CarDetails = (params: any) => {
           <Image style={styles.overlayBtnImg} source={require('../../../assets/img/phone.png')} />
         </TouchableOpacity>
       </View>
-      {/* <ScrollView> */}
       <TouchableOpacity onPress={() => navigation.goBack()} style={styles.btnBackCon}>
         <Image style={styles.btnBackImg} source={require('../../../assets/img/arrow-left.png')} />
       </TouchableOpacity>
@@ -34,18 +34,18 @@ const CarDetails = (params: any) => {
           {car.carName} #{car.carNumber}
         </Text>
 
-        <Text style={styles.driver}>
-          {car.driverName} {car.driverSurname} <Text style={styles.phone}>{car.driverPhone}</Text>
-        </Text>
-
         <View style={styles.typeCon}>
           <Text style={styles.type}> {CarTypes[car.type as keyof typeof CarTypes]}</Text>
         </View>
 
+        <Text style={styles.driver}>
+          {car.driverName} {car.driverSurname} <Text style={styles.phone}>{car.driverPhone}</Text>
+        </Text>
+
         <Text style={styles.desc}>{car.description}</Text>
       </View>
       <View style={styles.mapView}>
-        {/* <MapView
+        <MapView
           style={{ flex: 1 }}
           mapType="standard"
           provider="google"
@@ -68,9 +68,8 @@ const CarDetails = (params: any) => {
             title={`${car.driverName} ${car.driverSurname}`}
             type={'user'}
           />
-        </MapView> */}
+        </MapView>
       </View>
-      {/* </ScrollView> */}
     </View>
   );
 };
@@ -83,87 +82,82 @@ const styles = StyleSheet.create({
   },
   overlay: {
     position: 'absolute',
-    bottom: 16,
-    right: 16,
+    bottom: scale(12),
+    right: scale(12),
     zIndex: 4,
-    gap: 18,
+    gap: verticalScale(10),
   },
   overlayBtnCon: {
-    height: 60,
-    width: 60,
+    height: scale(50),
+    width: scale(50),
     borderRadius: 60,
     backgroundColor: '#fff',
     justifyContent: 'center',
     alignItems: 'center',
   },
   overlayBtnImg: {
-    height: 30,
-    width: 30,
+    height: scale(22),
+    width: scale(22),
   },
   btnBackCon: {
     position: 'absolute',
-    top: 50,
+    top: verticalScale(40),
     left: 20,
     zIndex: 1,
-    height: 40,
-    width: 40,
+    height: scale(30),
+    width: scale(30),
     borderRadius: 40,
     backgroundColor: '#fff',
     justifyContent: 'center',
     alignItems: 'center',
   },
   btnBackImg: {
-    height: 30,
-    width: 30,
+    height: scale(20),
+    width: scale(20),
   },
   img: {
     width: '100%',
-    height: '30%',
+    height: verticalScale(220),
   },
   content: {
-    minHeight: 200,
+    minHeight: verticalScale(120),
     paddingHorizontal: 16,
-    // marginTop: 16,
-    paddingTop: 16,
+    paddingTop: verticalScale(12),
   },
 
   title: {
     fontWeight: 'bold',
-    fontSize: 32,
-    maxWidth: 240,
+    fontSize: scale(26),
   },
   driver: {
     marginTop: 6,
-    fontSize: 24,
+    fontSize: scale(18),
     fontWeight: '500',
   },
   phone: {
-    marginTop: 6,
-    fontSize: 18,
+    fontSize: scale(14),
     fontWeight: '500',
     color: '#007BFF',
   },
   typeCon: {
-    position: 'absolute',
-    top: 16,
-    right: 16,
     backgroundColor: '#007BFF',
     borderRadius: 12,
+    alignSelf: 'flex-start',
   },
   type: {
-    fontSize: 16,
+    fontSize: scale(12),
     fontWeight: 'bold',
     color: '#fff',
     paddingHorizontal: 8,
-    paddingVertical: 6,
+    paddingVertical: verticalScale(3),
   },
   desc: {
-    marginTop: 12,
-    fontSize: 16,
+    marginTop: verticalScale(8),
+    fontSize: scale(14),
   },
   mapView: {
-    marginTop: 16,
-    height: 300,
+    marginTop: verticalScale(12),
+    height: verticalScale(200),
     width: '100%',
   },
 });

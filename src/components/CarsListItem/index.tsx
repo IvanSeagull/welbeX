@@ -2,6 +2,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 import { Car, CarTypes } from '../../types';
 import { useNavigation } from '@react-navigation/native';
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
 interface ICarItemProps {
   car: Car;
@@ -35,14 +36,14 @@ export default CarItem;
 
 const styles = StyleSheet.create({
   wrapper: {
-    height: 300,
+    height: verticalScale(250),
     width: '100%',
     borderRadius: 12,
     overflow: 'hidden',
   },
   img: {
     width: '100%',
-    height: 200,
+    height: verticalScale(160),
   },
   content: {
     flex: 1,
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
     borderTopWidth: 0,
     borderBottomLeftRadius: 12,
     borderBottomRightRadius: 12,
-    padding: 16,
+    padding: scale(14),
   },
   typeCon: {
     position: 'absolute',
@@ -61,20 +62,20 @@ const styles = StyleSheet.create({
     borderRadius: 12,
   },
   type: {
-    fontSize: 12,
+    fontSize: scale(10),
     fontWeight: 'bold',
     color: '#fff',
     paddingHorizontal: 8,
     paddingVertical: 6,
   },
   title: {
-    fontSize: 24,
+    fontSize: scale(18),
     fontWeight: 'bold',
     maxWidth: 240,
   },
   driver: {
     marginTop: 6,
-    fontSize: 16,
+    fontSize: scale(14),
     fontWeight: '500',
   },
 });

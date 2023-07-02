@@ -1,10 +1,11 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import CarsListScreen from '../../screens/CarsListScreen';
+
 import SettingsScreen from '../../screens/SettingsScreen';
 import MapScreen from '../../screens/MapScreen';
 import HomeNav from '../HomeNav';
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
 const Tab = createBottomTabNavigator();
 
@@ -15,9 +16,9 @@ const BottomTab = () => {
         headerShown: false,
         tabBarStyle: {
           backgroundColor: '#ffffff',
-          height: 100,
-          paddingBottom: 30,
-          paddingTop: 20,
+          height: verticalScale(65),
+          paddingBottom: verticalScale(20),
+          paddingTop: verticalScale(12),
         },
       }}>
       <Tab.Screen
@@ -106,12 +107,12 @@ export default BottomTab;
 
 const styles = StyleSheet.create({
   icon: {
-    height: 30,
-    width: 30,
+    height: scale(24),
+    width: scale(24),
   },
   text: {
-    fontSize: 16,
-    marginTop: 6,
+    fontSize: scale(12),
+    marginTop: verticalScale(4),
     fontWeight: 'bold',
   },
 });

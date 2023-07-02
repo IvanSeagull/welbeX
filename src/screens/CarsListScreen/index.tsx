@@ -3,26 +3,25 @@ import React from 'react';
 import data from '../../../assets/data.json';
 import { Car } from '../../types';
 import CarItem from '../../components/CarsListItem';
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
 const CarsListScreen = () => {
   return (
-    <SafeAreaView style={styles.wrapper}>
-      <View style={styles.content}>
-        <Text style={styles.title}>Cars List</Text>
-        <ScrollView
-          showsVerticalScrollIndicator={false}
-          contentContainerStyle={{
-            alignItems: 'center',
-            gap: 32,
-            paddingBottom: 80,
-            paddingTop: 12,
-          }}>
-          {data.map((item: Car, index) => (
-            <CarItem key={index} car={item} />
-          ))}
-        </ScrollView>
-      </View>
-    </SafeAreaView>
+    <View style={styles.content}>
+      <Text style={styles.title}>Cars List</Text>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
+          alignItems: 'center',
+          gap: 32,
+          paddingBottom: 80,
+          paddingTop: 12,
+        }}>
+        {data.map((item: Car, index) => (
+          <CarItem key={index} car={item} />
+        ))}
+      </ScrollView>
+    </View>
   );
 };
 
@@ -33,12 +32,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   content: {
-    paddingHorizontal: 16,
-    paddingTop: 16,
+    paddingHorizontal: scale(12),
+    paddingTop: '12%',
   },
   title: {
     fontWeight: 'bold',
-    fontSize: 24,
-    marginBottom: 6,
+    fontSize: scale(22),
+    marginBottom: verticalScale(6),
   },
 });

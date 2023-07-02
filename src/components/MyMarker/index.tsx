@@ -1,7 +1,7 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { Marker } from 'react-native-maps';
-import { Car } from '../../types';
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
 interface MarkerProps {
   latitude: number;
@@ -45,14 +45,14 @@ export default MyMarker;
 const styles = StyleSheet.create({
   wrapper: {
     backgroundColor: '#242424',
-    width: 50,
-    height: 50,
+    width: scale(34),
+    height: scale(34),
     borderRadius: 40,
     justifyContent: 'center',
     alignItems: 'center',
   },
   icon: {
-    width: 30,
-    height: 30,
+    width: scale(20),
+    height: scale(20),
   },
 });
