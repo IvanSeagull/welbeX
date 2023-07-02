@@ -1,7 +1,7 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 import React from 'react';
 import { Marker } from 'react-native-maps';
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import { scale } from 'react-native-size-matters';
 
 interface MarkerProps {
   latitude: number;
@@ -9,7 +9,6 @@ interface MarkerProps {
   title: string;
   description?: string;
   type: string;
-  //   car: Car;
 }
 
 const MyMarker: React.FC<MarkerProps> = ({ latitude, longitude, title, description, type }) => {

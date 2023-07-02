@@ -1,9 +1,9 @@
-import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import data from '../../../assets/data.json';
 import { Car } from '../../types';
 import CarItem from '../../components/CarsListItem';
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import { scale, verticalScale } from 'react-native-size-matters';
 import { useLanguageContext } from '../../context/LanguageContext';
 import { textTranslation } from '../../utils/text';
 

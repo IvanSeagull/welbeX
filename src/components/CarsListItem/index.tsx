@@ -2,7 +2,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 import { Car } from '../../types';
 import { useNavigation } from '@react-navigation/native';
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import { scale, verticalScale } from 'react-native-size-matters';
 import { textTranslation } from '../../utils/text';
 import { useLanguageContext } from '../../context/LanguageContext';
 

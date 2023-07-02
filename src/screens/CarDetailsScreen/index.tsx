@@ -5,7 +5,7 @@ import MapView from 'react-native-map-clustering';
 import { useNavigation } from '@react-navigation/native';
 import MyMarker from '../../components/MyMarker';
 import { callNumber } from '../../utils/phone';
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import { scale, verticalScale } from 'react-native-size-matters';
 import { sendWhatsApp } from '../../utils/whatsup';
 import { textTranslation } from '../../utils/text';
 import { useLanguageContext } from '../../context/LanguageContext';
