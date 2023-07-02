@@ -10,6 +10,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import { Linking } from 'react-native';
 import { callNumber } from '../../utils/phone';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import { sendWhatsApp } from '../../utils/whatsup';
 
 const CarDetails = (params: any) => {
   const car: Car = params.route.params.car;
@@ -17,7 +18,9 @@ const CarDetails = (params: any) => {
   return (
     <View style={{ flex: 1 }}>
       <View style={styles.overlay}>
-        <TouchableOpacity style={styles.overlayBtnCon} onPress={() => navigation.goBack()}>
+        <TouchableOpacity
+          style={styles.overlayBtnCon}
+          onPress={() => sendWhatsApp(car.driverPhone)}>
           <Image style={styles.overlayBtnImg} source={require('../../../assets/img/message.png')} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.overlayBtnCon} onPress={() => callNumber(car.driverPhone)}>
