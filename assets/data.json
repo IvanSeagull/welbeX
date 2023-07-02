@@ -1,0 +1,123 @@
+[
+  {
+    "id": 1,
+    "type": "p",
+    "driverName": "Ivan",
+    "driverSurname": "Ivanov",
+    "carName": "BMW",
+    "carNumber": "A123BC",
+    "latitude": 55.741244,
+    "longitude": 37.637423,
+    "imgUrl": "https://10.img.avito.st/image/1/1.xywMY7a4a8U6yqnADkC-DirBacOywunNesdpx7zKY8-6.l78FWV7i_XY17kOKJl4QdQxvPfxsJ83CnSo8piaIikk",
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, perferendis magnam? Exercitationem quaerat quidem assumenda ipsa."
+  },
+  {
+    "id": 2,
+    "type": "p",
+    "driverName": "Petr",
+    "driverSurname": "Petrov",
+    "carName": "Audi",
+    "carNumber": "A456BC",
+    "latitude": 55.761244,
+    "longitude": 37.608423,
+    "imgUrl": "https://70.img.avito.st/image/1/1.5WJA-ba4SYt2UIuOBoL0VWBbS43-WMuDNl1LifBQQYH2.-iK4G37oubcvn4oM3imv5EewNKZ_FjHakYDU77I2RW0",
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, perferendis magnam? Exercitationem quaerat quidem assumenda ipsa."
+  },
+  {
+    "id": 3,
+    "type": "s",
+    "driverName": "Sidor",
+    "driverSurname": "Sidorov",
+    "carName": "Mercedes",
+    "carNumber": "A789BC",
+    "latitude": 55.753244,
+    "longitude": 37.629423,
+    "imgUrl": "https://10.img.avito.st/image/1/1.yEUy_ra4ZKwEV6apLu3_ChZcZqqMX-akRFpmroJXbKaE.9cdJNhbtk2qq7hmv3aRSz6zA2flWXoxuI1wOz7qPiZw",
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, perferendis magnam? Exercitationem quaerat quidem assumenda ipsa."
+  },
+  {
+    "id": 4,
+    "type": "f",
+    "driverName": "Slava",
+    "driverSurname": "Slavov",
+    "carName": "BMW",
+    "carNumber": "A123BC",
+    "latitude": 55.738244,
+    "longitude": 37.618423,
+    "imgUrl": "https://60.img.avito.st/image/1/1.OkAjhLa4lqkVLVSsW5gXTwYmlK-dJRShVSCUq5MtnqOV.2P-B3mUyDt6c1CRAUSNt71HxKbw_dKZyMucZa80ZV2A",
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, perferendis magnam? Exercitationem quaerat quidem assumenda ipsa."
+  },
+  {
+    "id": 5,
+    "type": "p",
+    "driverName": "Vasya",
+    "driverSurname": "Vasilev",
+    "carName": "Audi",
+    "carNumber": "A456BC",
+    "latitude": 55.758444,
+    "longitude": 37.619423,
+    "imgUrl": "https://90.img.avito.st/image/1/1.N9VOaLa4mzx4wVk5LEwrqGjKmTrwyRk0OMyZPv7Bkzb4.0pgau2z3dMwtrvlElUuCaM5m14OFq_V1LpI8WxkT9l4",
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, perferendis magnam? Exercitationem quaerat quidem assumenda ipsa."
+  },
+  {
+    "id": 6,
+    "type": "f",
+    "driverName": "Nikita",
+    "driverSurname": "Nikeev",
+    "carName": "Mercedes",
+    "carNumber": "A789BC",
+    "latitude": 55.752244,
+    "longitude": 37.600423,
+    "imgUrl": "https://40.img.avito.st/image/1/1.t3_bm7a4G5btMtmTub3kePg5GZBlOpmerT8ZlGsyE5xt.FZWtMq3LaqHGZi0uUf-JbTsSBvhWeWpIQeHeK8KjInY",
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, perferendis magnam? Exercitationem quaerat quidem assumenda ipsa."
+  },
+  {
+    "id": 7,
+    "type": "s",
+    "driverName": "Daniil",
+    "driverSurname": "Daniilov",
+    "carName": "BMW",
+    "carNumber": "A123BC",
+    "latitude": 55.731244,
+    "longitude": 37.588423,
+    "imgUrl": "https://20.img.avito.st/image/1/1.VEjDn7a4-KH1Njqk5751HuA9-qd9PnqptTv6o3M28Kt1.lioH0RKyYKXtyMMlhBDQBJJbh_hOLo7mkc0wKVA0wGM",
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, perferendis magnam? Exercitationem quaerat quidem assumenda ipsa."
+  },
+  {
+    "id": 8,
+    "type": "s",
+    "driverName": "Katya",
+    "driverSurname": "Katyeva",
+    "carName": "Audi",
+    "carNumber": "A456BC",
+    "latitude": 55.781244,
+    "longitude": 37.668423,
+    "imgUrl": "https://50.img.avito.st/image/1/1.Hs-81ba4siaKfHAjjKlZiZh3sCACdDAuynGwJAx8uiwK.CLXHHmOEjGI5FF70ulLFvcHHRZ5V-EYbWn7azfF2sH4",
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, perferendis magnam? Exercitationem quaerat quidem assumenda ipsa."
+  },
+  {
+    "id": 9,
+    "type": "p",
+    "driverName": "Lisa",
+    "driverSurname": "Lisova",
+    "carName": "Mercedes",
+    "carNumber": "A789BC",
+    "latitude": 55.791244,
+    "longitude": 37.575423,
+    "imgUrl": "https://10.img.avito.st/image/1/1.5IjJ5ba5SGH_Uspsjfb9oRBGTmt9xl7jcEZKZXVMQmM.Mtmg3ykN7df0cJ1Sm-s8Cbk0IzWaMYFoae_eyezwrvI",
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, perferendis magnam? Exercitationem quaerat quidem assumenda ipsa."
+  },
+  {
+    "id": 10,
+
+    "type": "f",
+    "driverName": "Maria",
+    "driverSurname": "Marianova",
+    "carName": "BMW",
+    "carNumber": "A123BC",
+    "latitude": 55.710244,
+    "longitude": 37.668423,
+    "imgUrl": "https://00.img.avito.st/image/1/1.v6UTdra4E0wl39FJYTyNrzPUEUqt15FEZdIRTqPfG0al.paAgGLxzJnix_LkcVPGj6J7KDBvWfl-kud7w--KrWEM",
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, perferendis magnam? Exercitationem quaerat quidem assumenda ipsa."
+  }
+]
