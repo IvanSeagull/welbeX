@@ -1,4 +1,4 @@
-export const textTranslation = {
+export const textTranslation: any = {
   settings: {
     title: {
       en: 'Settings',
