@@ -15,40 +15,38 @@ const SettingsScreen = () => {
   const { language, setLanguage } = useLanguageContext();
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <View style={styles.content}>
-        <Modal isVisible={isModalVisible}>
-          <View style={{ flex: 1, justifyContent: 'center' }}>
-            <View style={styles.modal}>
-              <Text style={styles.modalTitle}>Select Language</Text>
-              <TouchableOpacity
-                onPress={() => {
-                  setLanguage('ru');
+    <View style={styles.content}>
+      <Modal isVisible={isModalVisible}>
+        <View style={{ flex: 1, justifyContent: 'center' }}>
+          <View style={styles.modal}>
+            <Text style={styles.modalTitle}>Select Language</Text>
+            <TouchableOpacity
+              onPress={() => {
+                setLanguage('ru');
 
-                  toggleModal();
-                }}>
-                <Text style={styles.lang}>Russian</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => {
-                  setLanguage('en');
-                  setLanguage('en');
-                  toggleModal();
-                }}>
-                <Text style={styles.lang}>English</Text>
-              </TouchableOpacity>
-            </View>
+                toggleModal();
+              }}>
+              <Text style={styles.lang}>Russian</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                setLanguage('en');
+                setLanguage('en');
+                toggleModal();
+              }}>
+              <Text style={styles.lang}>English</Text>
+            </TouchableOpacity>
           </View>
-        </Modal>
-        <Text style={styles.title}>{textTranslation.settings.title[language]}</Text>
-        <View style={styles.row}>
-          <Text style={styles.langTitle}>{textTranslation.settings.language[language]}:</Text>
-          <TouchableOpacity onPress={toggleModal}>
-            <Text style={styles.langValue}>{language === 'ru' ? 'Русский' : 'English'}</Text>
-          </TouchableOpacity>
         </View>
+      </Modal>
+      <Text style={styles.title}>{textTranslation.settings.title[language]}</Text>
+      <View style={styles.row}>
+        <Text style={styles.langTitle}>{textTranslation.settings.language[language]}:</Text>
+        <TouchableOpacity onPress={toggleModal}>
+          <Text style={styles.langValue}>{language === 'ru' ? 'Русский' : 'English'}</Text>
+        </TouchableOpacity>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 
@@ -56,6 +54,7 @@ export default SettingsScreen;
 
 const styles = StyleSheet.create({
   content: {
+    paddingTop: '12%',
     paddingHorizontal: scale(10),
   },
   modal: {

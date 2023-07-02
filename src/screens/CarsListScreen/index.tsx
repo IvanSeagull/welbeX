@@ -4,11 +4,14 @@ import data from '../../../assets/data.json';
 import { Car } from '../../types';
 import CarItem from '../../components/CarsListItem';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import { useLanguageContext } from '../../context/LanguageContext';
+import { textTranslation } from '../../utils/text';
 
 const CarsListScreen = () => {
+  const { language } = useLanguageContext();
   return (
     <View style={styles.content}>
-      <Text style={styles.title}>Cars List</Text>
+      <Text style={styles.title}>{textTranslation.home.title[language]}</Text>
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{
