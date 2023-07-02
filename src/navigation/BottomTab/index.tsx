@@ -5,11 +5,15 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import SettingsScreen from '../../screens/SettingsScreen';
 import MapScreen from '../../screens/MapScreen';
 import HomeNav from '../HomeNav';
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import { scale, verticalScale } from 'react-native-size-matters';
+import { textTranslation } from '../../utils/text';
+import { useLanguageContext } from '../../context/LanguageContext';
 
 const Tab = createBottomTabNavigator();
 
 const BottomTab = () => {
+  const { language } = useLanguageContext();
+
   return (
     <Tab.Navigator
       screenOptions={{
@@ -39,7 +43,7 @@ const BottomTab = () => {
                 }
               />
               <Text style={[styles.text, focused ? { color: '#007BFF' } : { color: '#858585' }]}>
-                Home
+                {textTranslation.tabs.home[language]}
               </Text>
             </View>
           ),
@@ -65,7 +69,7 @@ const BottomTab = () => {
                 }
               />
               <Text style={[styles.text, focused ? { color: '#007BFF' } : { color: '#858585' }]}>
-                Map
+                {textTranslation.tabs.map[language]}
               </Text>
             </View>
           ),
@@ -91,7 +95,7 @@ const BottomTab = () => {
                 }
               />
               <Text style={[styles.text, focused ? { color: '#007BFF' } : { color: '#858585' }]}>
-                Settings
+                {textTranslation.tabs.settings[language]}
               </Text>
             </View>
           ),

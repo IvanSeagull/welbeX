@@ -1,14 +1,18 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
-import { Car, CarTypes } from '../../types';
+import { Car } from '../../types';
 import { useNavigation } from '@react-navigation/native';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import { textTranslation } from '../../utils/text';
+import { useLanguageContext } from '../../context/LanguageContext';
 
 interface ICarItemProps {
   car: Car;
 }
 
 const CarItem: React.FC<ICarItemProps> = ({ car }) => {
+  const { language } = useLanguageContext();
+
   const navigation = useNavigation();
   return (
     <TouchableOpacity
@@ -18,7 +22,7 @@ const CarItem: React.FC<ICarItemProps> = ({ car }) => {
       <Image source={{ uri: car.imgUrl }} style={styles.img} resizeMode="cover" />
       <View style={styles.content}>
         <View style={styles.typeCon}>
-          <Text style={styles.type}> {CarTypes[car.type as keyof typeof CarTypes]}</Text>
+          <Text style={styles.type}> {textTranslation.carTypes[car.type][language]}</Text>
         </View>
         <Text style={styles.title}>
           {car.carName} #{car.carNumber}
@@ -66,7 +70,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#fff',
     paddingHorizontal: 8,
-    paddingVertical: 6,
+    paddingVertical: 10,
+    maxWidth: scale(120),
+    textAlign: 'center',
   },
   title: {
     fontSize: scale(18),

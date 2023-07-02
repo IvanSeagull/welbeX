@@ -1,20 +1,20 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Car, CarTypes } from '../../types';
+import { Car } from '../../types';
 import MapView from 'react-native-map-clustering';
 import { useNavigation } from '@react-navigation/native';
-import { Marker } from 'react-native-maps';
 import MyMarker from '../../components/MyMarker';
-import { ScrollView } from 'react-native-gesture-handler';
-import { Linking } from 'react-native';
 import { callNumber } from '../../utils/phone';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 import { sendWhatsApp } from '../../utils/whatsup';
+import { textTranslation } from '../../utils/text';
+import { useLanguageContext } from '../../context/LanguageContext';
 
 const CarDetails = (params: any) => {
   const car: Car = params.route.params.car;
   const navigation = useNavigation();
+  const { language } = useLanguageContext();
+
   return (
     <View style={{ flex: 1 }}>
       <View style={styles.overlay}>
@@ -38,7 +38,7 @@ const CarDetails = (params: any) => {
         </Text>
 
         <View style={styles.typeCon}>
-          <Text style={styles.type}> {CarTypes[car.type as keyof typeof CarTypes]}</Text>
+          <Text style={styles.type}> {textTranslation.carTypes[car.type][language]}</Text>
         </View>
 
         <Text style={styles.driver}>

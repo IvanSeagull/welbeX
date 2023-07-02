@@ -2,13 +2,18 @@ import { SafeAreaView, StyleSheet, Text, View, TouchableOpacity } from 'react-na
 import React from 'react';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 import Modal from 'react-native-modal';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { textTranslation } from '../../utils/text';
+import { useLanguageContext } from '../../context/LanguageContext';
 
 const SettingsScreen = () => {
   const [isModalVisible, setModalVisible] = React.useState(false);
-
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
   };
+
+  const { language, setLanguage } = useLanguageContext();
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.content}>
@@ -18,7 +23,7 @@ const SettingsScreen = () => {
               <Text style={styles.modalTitle}>Select Language</Text>
               <TouchableOpacity
                 onPress={() => {
-                  // save language
+                  setLanguage('ru');
 
                   toggleModal();
                 }}>
@@ -26,8 +31,8 @@ const SettingsScreen = () => {
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => {
-                  // save language
-
+                  setLanguage('en');
+                  setLanguage('en');
                   toggleModal();
                 }}>
                 <Text style={styles.lang}>English</Text>
@@ -35,11 +40,11 @@ const SettingsScreen = () => {
             </View>
           </View>
         </Modal>
-        <Text style={styles.title}>Settings</Text>
+        <Text style={styles.title}>{textTranslation.settings.title[language]}</Text>
         <View style={styles.row}>
-          <Text style={styles.langTitle}>Language:</Text>
+          <Text style={styles.langTitle}>{textTranslation.settings.language[language]}:</Text>
           <TouchableOpacity onPress={toggleModal}>
-            <Text style={styles.langValue}>English</Text>
+            <Text style={styles.langValue}>{language === 'ru' ? 'Русский' : 'English'}</Text>
           </TouchableOpacity>
         </View>
       </View>

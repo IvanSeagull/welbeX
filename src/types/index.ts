@@ -13,9 +13,3 @@ export type Car = {
   imgUrl: string;
   description: string;
 };
-
-export enum CarTypes {
-  f = 'Freight car',
-  p = 'Passenger car',
-  s = 'Special transport',
-}
